@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=NEXUS Plasma Settings
+Name[tr]=NEXUS Plasma Kişiselleştirme
+Comment=macOS-style KDE Plasma Control Center (Appearance, Dock, Blur, Animations, Cursor, Wallpaper, Profiles & Undo)
+Comment[tr]=KDE Plasma macOS Kişiselleştirme Merkezi (Tema, Dock, Bulanıklık, Animasyonlar, İmleç, Duvar Kağıdı, Profiller)
+Exec=python3 __HOME__/.local/share/kde-macos/control-center/main.py
+Icon=preferences-desktop-color
+Terminal=false
+Categories=Settings;DesktopSettings;Qt;KDE;
+Keywords=nexus;macos;theme;dock;blur;animations;cursor;wallpaper;plasma;kwin;
+StartupNotify=true

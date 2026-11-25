@@ -1,0 +1,23 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "noreply@localhost",
+                "Name": "NEXUS-Plasma"
+            }
+        ],
+        "Category": "Windows and Tasks",
+        "Description": "macOS-style dock with smooth hover icon magnification and running-application indicators",
+        "EnabledByDefault": true,
+        "Icon": "preferences-system-windows",
+        "Id": "com.nexus.macosdock",
+        "License": "GPL-2.0+",
+        "Name": "macOS Dock",
+        "Version": "1.0"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.multitasking"
+    ]
+}

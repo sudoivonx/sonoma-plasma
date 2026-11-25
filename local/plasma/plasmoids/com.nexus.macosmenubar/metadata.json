@@ -1,0 +1,18 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "NEXUS-Plasma"
+            }
+        ],
+        "Category": "Application Launchers",
+        "Description": "macOS-style active application title and Finder desktop menu bar",
+        "Icon": "start-here-kde",
+        "Id": "com.nexus.macosmenubar",
+        "License": "GPL-2.0-or-later",
+        "Name": "macOS Menu Bar Title",
+        "Version": "1.0"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

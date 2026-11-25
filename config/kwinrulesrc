@@ -1,0 +1,47 @@
+[1]
+Description=macOS Vibrancy — Dolphin (Finder)
+opacityactive=90
+opacityactiverule=2
+opacityinactive=86
+opacityinactiverule=2
+wmclass=dolphin
+wmclassmatch=2
+
+[2]
+Description=macOS Vibrancy — System Settings
+opacityactive=90
+opacityactiverule=2
+opacityinactive=86
+opacityinactiverule=2
+wmclass=systemsettings
+wmclassmatch=2
+
+[3]
+Description=macOS Vibrancy — Konsole
+opacityactive=88
+opacityactiverule=2
+opacityinactive=84
+opacityinactiverule=2
+wmclass=konsole
+wmclassmatch=2
+
+[4]
+Description=macOS Vibrancy — Kitty
+opacityactive=88
+opacityactiverule=2
+opacityinactive=84
+opacityinactiverule=2
+wmclass=kitty
+wmclassmatch=2
+
+[5]
+Description=macOS Vibrancy — macOS Control Center
+opacityactive=90
+opacityactiverule=2
+opacityinactive=86
+opacityinactiverule=2
+title=macOS Control Center
+titlematch=2
+
+[General]
+Order=1,2,3,4,5

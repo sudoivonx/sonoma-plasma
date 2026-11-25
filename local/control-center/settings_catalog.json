@@ -1,0 +1,313 @@
+{
+  "schema": "nexus-plasma-catalog-v1",
+  "categories": [
+    { "id": "appearance", "title": "Görünüm & Tema", "subtitle": "WhiteSur Koyu/Açık, Pencere Dekorasyonu, İkonlar", "icon": "palette" },
+    { "id": "dock_bar", "title": "Dock & Üst Menü", "subtitle": "Global Menü Çubuğu, Yüzen Dock ve Otomatik Gizleme", "icon": "dock_to_bottom" },
+    { "id": "blur_effects", "title": "Bulanıklık & Cam", "subtitle": "KWin Blur, Saydamlık ve Darkly Köşe Efektleri", "icon": "blur_on" },
+    { "id": "animations", "title": "Animasyonlar & Spaces", "subtitle": "Burn My Windows Glow, Magic Lamp, Masaüstleri ve Hız", "icon": "animation" },
+    { "id": "wallpaper_lock", "title": "Duvar Kağıdı & Kilit", "subtitle": "Masaüstü ve Kilit Ekranı Arka Planı", "icon": "wallpaper" },
+    { "id": "cursor", "title": "İmleç & ShakeCursor", "subtitle": "İmleç Teması, Boyutu ve Büyüme Koruması", "icon": "mouse" },
+    { "id": "typography", "title": "Yazı Tipleri", "subtitle": "Sistem, Başlık ve Terminal Tipografisi", "icon": "font_download" },
+    { "id": "profiles_recovery", "title": "Profiller & Kurtarma", "subtitle": "Undo, Sıfırlama ve Yedekler", "icon": "shield" }
+  ],
+  "settings": [
+    {
+      "id": "appearance.colorMode",
+      "category": "appearance",
+      "title": "Tema Kipi (Koyu / Açık)",
+      "description": "WhiteSur-dark (Koyu) ve WhiteSur-light (Açık) Plasma, renk şeması, ikon ve pencere teması arasında tek tık geçiş yapar.",
+      "type": "enum",
+      "choices": ["dark", "light"],
+      "default": "dark"
+    },
+    {
+      "id": "appearance.plasmaTheme",
+      "category": "appearance",
+      "title": "Plasma Masaüstü Teması",
+      "description": "Üst bar, dock ve Plasma pencere öğelerinin görsel teması (plasmarc).",
+      "type": "string",
+      "default": "WhiteSur-dark"
+    },
+    {
+      "id": "appearance.colorScheme",
+      "category": "appearance",
+      "title": "Renk Şeması",
+      "description": "Uygulama pencereleri ve vurgular için KDE renk paleti (kdeglobals).",
+      "type": "string",
+      "default": "WhiteSurDark"
+    },
+    {
+      "id": "appearance.windowDecoration",
+      "category": "appearance",
+      "title": "Pencere Dekorasyonu",
+      "description": "Aurorae v2 macOS pencere başlık çubuğu teması (kwinrc).",
+      "type": "string",
+      "default": "__aurorae__svg__WhiteSur-dark"
+    },
+    {
+      "id": "appearance.buttonLayout",
+      "category": "appearance",
+      "title": "Pencere Buton Yerleşimi",
+      "description": "macOS sol üst trafik ışıkları (XIA) veya klasik sağ yerleşim.",
+      "type": "enum",
+      "choices": ["macos_left", "classic_right"],
+      "default": "macos_left"
+    },
+    {
+      "id": "appearance.iconTheme",
+      "category": "appearance",
+      "title": "İkon Seti",
+      "description": "Uygulama ve sistem simgeleri için ikon paketi.",
+      "type": "string",
+      "default": "WhiteSur-dark"
+    },
+    {
+      "id": "appearance.widgetStyle",
+      "category": "appearance",
+      "title": "Qt Uygulama Stili",
+      "description": "Qt/KDE pencereleri için bileşen stili (Darkly saydamlığı destekler).",
+      "type": "enum",
+      "choices": ["Darkly", "Breeze", "Fusion"],
+      "default": "Darkly"
+    },
+    {
+      "id": "dock_bar.topBarHeight",
+      "category": "dock_bar",
+      "title": "Üst Menü Çubuğu Yüksekliği (px)",
+      "description": "macOS tarzı üst global menü çubuğunun piksel yüksekliği.",
+      "type": "integer",
+      "min": 24,
+      "max": 40,
+      "default": 26
+    },
+    {
+      "id": "dock_bar.dockHeight",
+      "category": "dock_bar",
+      "title": "Alt Dock Yüksekliği (px)",
+      "description": "Alttaki yüzen dock'un yüksekliği ve simge ölçeği.",
+      "type": "integer",
+      "min": 44,
+      "max": 88,
+      "default": 72
+    },
+    {
+      "id": "dock_bar.dockFloating",
+      "category": "dock_bar",
+      "title": "Yüzen (Floating) Dock",
+      "description": "Dock'u ekran kenarından hafifçe ayrılmış yuvarlatılmış kapsül olarak gösterir.",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "dock_bar.dockHiding",
+      "category": "dock_bar",
+      "title": "Dock Gizleme Davranışı",
+      "description": "Pencereler yaklaşınca gizle (dodgewindows), otomatik gizle (autohide) veya her zaman görünür (none).",
+      "type": "enum",
+      "choices": ["dodgewindows", "autohide", "none"],
+      "default": "dodgewindows"
+    },
+    {
+      "id": "blur_effects.blurEnabled",
+      "category": "blur_effects",
+      "title": "KWin Arka Plan Bulanıklığı",
+      "description": "macOS vibrancy benzeri buzlu cam arka plan bulanıklığı.",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "blur_effects.blurStrength",
+      "category": "blur_effects",
+      "title": "Bulanıklık Şiddeti",
+      "description": "KWin Blur yarıçapı (1-15 arası).",
+      "type": "integer",
+      "min": 1,
+      "max": 15,
+      "default": 11
+    },
+    {
+      "id": "blur_effects.noiseStrength",
+      "category": "blur_effects",
+      "title": "Buzlu Cam Kumlanma (Noise)",
+      "description": "Bulanık yüzeylerdeki ince doku seviyesi (0-10 arası).",
+      "type": "integer",
+      "min": 0,
+      "max": 10,
+      "default": 2
+    },
+    {
+      "id": "blur_effects.translucencyEnabled",
+      "category": "blur_effects",
+      "title": "Pencere Saydamlık Efektleri",
+      "description": "Taşıma, menü ve açılır pencerelerde yumuşak saydamlık.",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "blur_effects.darklyTranslucent",
+      "category": "blur_effects",
+      "title": "Darkly Saydam Dolphin & Cam Görünüm",
+      "description": "Darkly Qt stilinde yarı saydam Dolphin görünümü ve cam kenar çubukları.",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "blur_effects.darklyMenuOpacity",
+      "category": "blur_effects",
+      "title": "Menü Saydamlığı (%)",
+      "description": "Darkly açılır menülerinin opaklık yüzdesi (50-100).",
+      "type": "integer",
+      "min": 50,
+      "max": 100,
+      "default": 84
+    },
+    {
+      "id": "blur_effects.darklyCornerRadius",
+      "category": "blur_effects",
+      "title": "Köşe Yuvarlaklığı (px)",
+      "description": "Darkly pencere ve bileşen köşe yarıçapı (0-24).",
+      "type": "integer",
+      "min": 0,
+      "max": 24,
+      "default": 12
+    },
+    {
+      "id": "animations.durationFactor",
+      "category": "animations",
+      "title": "Genel Animasyon Hızı Çarpanı",
+      "description": "1.0 standart, 0.8 daha seri, 1.2 daha sinematik (0.0 kapalı).",
+      "type": "number",
+      "min": 0.0,
+      "max": 2.0,
+      "default": 1.0
+    },
+    {
+      "id": "animations.magicLampEnabled",
+      "category": "animations",
+      "title": "Magic Lamp (macOS Genie Küçültme)",
+      "description": "Pencereleri Dock'a akıcı Genie eğrisiyle küçültür.",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "animations.magicLampDuration",
+      "category": "animations",
+      "title": "Magic Lamp Süresi (ms)",
+      "description": "Genie küçültme/geri yükleme animasyon süresi.",
+      "type": "integer",
+      "min": 120,
+      "max": 600,
+      "default": 280
+    },
+    {
+      "id": "animations.glowEnabled",
+      "category": "animations",
+      "title": "Burn My Windows — Glow Açılış/Kapanış",
+      "description": "Pencereler açılıp kapanırken Burn My Windows Aura Glow efektini kullanır.",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "animations.glowDuration",
+      "category": "animations",
+      "title": "Glow Animasyon Süresi (ms)",
+      "description": "Burn My Windows Glow açılış/kapanış süresi (150-2000 ms, varsayılan 750).",
+      "type": "integer",
+      "min": 150,
+      "max": 2000,
+      "default": 750
+    },
+    {
+      "id": "animations.slideEnabled",
+      "category": "animations",
+      "title": "Masaüstü Kaydırma (Spaces Slide)",
+      "description": "Sanal masaüstleri arası yatay kayma animasyonu.",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "animations.virtualDesktops",
+      "category": "animations",
+      "title": "Sanal Masaüstü Sayısı (Spaces)",
+      "description": "Yatay tek sırada çalışan masaüstü sayısı (1-8).",
+      "type": "integer",
+      "min": 1,
+      "max": 8,
+      "default": 4
+    },
+    {
+      "id": "wallpaper_lock.desktopWallpaper",
+      "category": "wallpaper_lock",
+      "title": "Masaüstü Duvar Kağıdı",
+      "description": "Tüm Plasma masaüstlerine uygulanan aktif duvar kağıdı dosyası.",
+      "type": "filepath",
+      "default": "~/Pictures/Wallpapers/sonoma-plasma-default.jpg"
+    },
+    {
+      "id": "wallpaper_lock.lockscreenWallpaper",
+      "category": "wallpaper_lock",
+      "title": "Kilit Ekranı Duvar Kağıdı",
+      "description": "KDE kilit ekranında gösterilen duvar kağıdı (kscreenlockerrc).",
+      "type": "filepath",
+      "default": "~/Pictures/Wallpapers/sonoma-plasma-default.jpg"
+    },
+    {
+      "id": "wallpaper_lock.autolock",
+      "category": "wallpaper_lock",
+      "title": "Otomatik Ekran Kilidi",
+      "description": "Kapalı tutulduğunda ekran yalnızca manuel kilitlediğinizde kilitlenir.",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "id": "cursor.shakeCursorEnabled",
+      "category": "cursor",
+      "title": "Sallayınca İmleci Büyüt (ShakeCursor)",
+      "description": "Hareket ettikçe imlecin büyümesini engellemek için KAPALI tutulmalıdır.",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "id": "cursor.theme",
+      "category": "cursor",
+      "title": "İmleç Teması",
+      "description": "KDE Plasma oturumundaki fare imleç paketi (kcminputrc).",
+      "type": "string",
+      "default": "WhiteSur-cursors"
+    },
+    {
+      "id": "cursor.size",
+      "category": "cursor",
+      "title": "İmleç Boyutu (px)",
+      "description": "Sabit imleç boyutu (24 önerilir).",
+      "type": "integer",
+      "min": 16,
+      "max": 48,
+      "default": 24
+    },
+    {
+      "id": "typography.generalFont",
+      "category": "typography",
+      "title": "Sistem Arayüz Yazı Tipi",
+      "description": "Menü, pencere ve etiketlerde kullanılan ana yazı tipi.",
+      "type": "string",
+      "default": "Inter,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+    },
+    {
+      "id": "typography.fixedFont",
+      "category": "typography",
+      "title": "Sabit Genişlik (Terminal) Yazı Tipi",
+      "description": "Terminal ve kod alanları için monospace yazı tipi.",
+      "type": "string",
+      "default": "JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+    },
+    {
+      "id": "typography.titleFont",
+      "category": "typography",
+      "title": "Pencere Başlık Yazı Tipi",
+      "description": "Pencere başlık çubuğunda kullanılan yazı tipi.",
+      "type": "string",
+      "default": "Inter,10,-1,5,700,0,0,0,0,0,0,0,0,0,0,1"
+    }
+  ]
+}

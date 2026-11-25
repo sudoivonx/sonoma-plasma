@@ -1,0 +1,18 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "NEXUS-Plasma"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "macOS-style Control Center toggle glyph opening NEXUS-Plasma Control Center",
+        "Icon": "preferences-desktop-color",
+        "Id": "com.nexus.macoscontrolcenter",
+        "License": "GPL-2.0-or-later",
+        "Name": "macOS Control Center Button",
+        "Version": "1.0"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
