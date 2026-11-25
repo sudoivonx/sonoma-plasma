@@ -1,6 +1,6 @@
 # Sonoma Plasma — Türkçe Kurulum ve Kullanım Rehberi
 
-> **KDE Plasma 6 (Wayland)** için baştan sona özenle hazırlanmış macOS Sonoma masaüstü kurulumu: kosinüs dalgalı büyüyen Dock, aktif uygulamayı gösteren Finder üst menü çubuğu, **Burn My Windows — Aura Glow**, seçici buzlu cam (Vibrancy) ve yerel QtQuick Kontrol Merkezi.
+> **KDE Plasma 6 (Wayland)** için baştan sona özenle hazırlanmış macOS Sonoma masaüstü kurulumu: kosinüs dalgalı büyüyen Dock, aktif uygulamayı gösteren Finder üst menü çubuğu, buzlu cam **macOS Sonoma bildirimleri**, **Burn My Windows — Aura Glow**, seçici buzlu cam (Vibrancy) ve yerel QtQuick Kontrol Merkezi.
 
 [🇬🇧 English README](../README.md) · [⚙️ Özelleştirme Rehberi](CUSTOMIZATION.md)
 
@@ -12,10 +12,12 @@
 
 - **Gerçekçi macOS Sonoma Üst Barı (`26px`):** Sol üstte Apple menüsü, odaklanılan uygulamayı kalın başlıkla gösteren ve boş masaüstünde çalışan **`Finder  File  Edit  View  Go  Window  Help`** menüsü sunan `com.nexus.macosmenubar`, canlı Global Menü (`appmenu`), sade sistem tepsisi, Spotlight arama büyüteci, iki anahtarlı Kontrol Merkezi simgesi (`com.nexus.macoscontrolcenter`) ve tek satır tarih/saat.
 - **Kosinüs Dalgalı Büyüyen Dock (`44px → 64px`):** Plasma 6 `TaskManager.TasksModel` tabanlı `com.nexus.macosdock` eklentisi; `roundToIconSize: false` sayesinde takılmadan kesintisiz büyüyen simgeler, renkli Launchpad, çalışan uygulama nokta göstergeleri ve tam renkli Çöp Kutusu.
+- **macOS Sonoma Bildirimleri ve Bildirim Merkezi (`com.nexus.macosnotifications`):** Varsayılan KDE bildirimleri yerine sağ üstte beliren buzlu cam yuvarlatılmış (`18px`) bildirim kartları, sol `40×40` uygulama simgesi, üzerine gelince açılan `×` kapatma kapsülü, Koyu/Açık tema uyumu ve üst bar Bildirim Merkezi çekmecesi.
 - **Burn My Windows — Aura Glow & Magic Lamp:** KWin 6 (Wayland / GLES 3.20) kullanıcı alanına kurulan **Burn My Windows Aura Glow** açılış/kapanış efekti + `magiclamp` (`280ms`) Genie küçültme animasyonu.
 - **Seçici macOS Vibrancy Cam Efekti:** Dolphin, Sistem Ayarları, Konsole, Kitty ve Kontrol Merkezi pencerelerinde buzlu cam saydamlığı (`Darkly` + KWin Blur + `kwinrulesrc`); tarayıcı, video ve kod editörlerinde göz yormayan `%100` opak okunabilirlik.
 - **macOS Kontrol Merkezi (`Meta + I`):** 8 kategori, 34 canlı ayar, tek tık Koyu/Açık 5 katmanlı tema geçişi, animasyon profilleri, profil kaydetme/yükleme ve SHA-256 korumalı **Geri Al (Undo)** / **Sıfırla**.
-- **Büyüyen İmleç Hatasına Kalıcı Çözüm:** KDE Plasma 6'da varsayılan gelen `shakecursor` efekti kapatılır ve `WhiteSur-cursors` `24px` olarak sabitlenir.
+
+![macOS Sonoma Bildirimleri](../assets/screenshots/notifications.png)
 
 ---
 

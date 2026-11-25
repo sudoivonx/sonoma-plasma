@@ -1,0 +1,4 @@
+[Notifications]
+PopupPosition=TopRight
+PopupTimeout=5500
+ShowPopupTimeout=false

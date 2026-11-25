@@ -157,7 +157,7 @@ backup_existing() {
         return 0
     fi
     mkdir -p "$BACKUP_DIR/config"
-    for f in darklyrc kcminputrc kded6rc kdeglobals kglobalshortcutsrc krunnerrc kscreenlockerrc kwinrc kwinrulesrc plasma-org.kde.plasma.desktop-appletsrc plasmarc plasmashellrc; do
+    for f in darklyrc kcminputrc kded6rc kdeglobals kglobalshortcutsrc krunnerrc kscreenlockerrc kwinrc kwinrulesrc plasma-org.kde.plasma.desktop-appletsrc plasmanotifyrc plasmarc plasmashellrc; do
         [[ -f "$CONFIG_HOME/$f" ]] && cp -a "$CONFIG_HOME/$f" "$BACKUP_DIR/config/$f"
     done
     [[ -d "$CONFIG_HOME/gtk-3.0" ]] && cp -a "$CONFIG_HOME/gtk-3.0" "$BACKUP_DIR/config/gtk-3.0"
@@ -201,7 +201,7 @@ deploy_files() {
     cp -f "$REPO_WALLPAPER" "$TARGET_WALLPAPER"
 
     # 2. KDE & GTK Configs
-    for f in darklyrc kcminputrc kded6rc kdeglobals kglobalshortcutsrc krunnerrc kscreenlockerrc kwinrc kwinrulesrc plasma-org.kde.plasma.desktop-appletsrc plasmarc plasmashellrc; do
+    for f in darklyrc kcminputrc kded6rc kdeglobals kglobalshortcutsrc krunnerrc kscreenlockerrc kwinrc kwinrulesrc plasma-org.kde.plasma.desktop-appletsrc plasmanotifyrc plasmarc plasmashellrc; do
         [[ -f "$REPO_CONFIG_DIR/$f" ]] && deploy_with_home_sub "$REPO_CONFIG_DIR/$f" "$CONFIG_HOME/$f"
     done
     deploy_with_home_sub "$REPO_CONFIG_DIR/gtk-3.0/settings.ini" "$CONFIG_HOME/gtk-3.0/settings.ini"
@@ -215,7 +215,7 @@ deploy_files() {
 
     # 4. Plasma 6 macOS Plasmoids
     mkdir -p "$DATA_HOME/plasma/plasmoids"
-    for p in com.nexus.macosdock com.nexus.macosmenubar com.nexus.macoscontrolcenter; do
+    for p in com.nexus.macosdock com.nexus.macosmenubar com.nexus.macoscontrolcenter com.nexus.macosnotifications; do
         rm -rf "$DATA_HOME/plasma/plasmoids/$p"
         while IFS= read -r -d '' f; do
             rel="${f#"$REPO_LOCAL_DIR/plasma/plasmoids/$p/"}"

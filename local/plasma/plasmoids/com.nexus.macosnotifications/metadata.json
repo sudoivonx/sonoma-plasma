@@ -1,0 +1,18 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Sonoma Plasma"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "macOS Sonoma frosted-glass notification banners and notification center for KDE Plasma 6",
+        "Icon": "preferences-desktop-notification",
+        "Id": "com.nexus.macosnotifications",
+        "License": "MIT",
+        "Name": "macOS Sonoma Notifications",
+        "Version": "1.0"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

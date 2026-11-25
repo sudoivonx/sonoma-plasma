@@ -27,7 +27,7 @@ if [[ "$DRY_RUN" -eq 1 ]]; then
     exit 0
 fi
 
-for f in darklyrc kcminputrc kded6rc kdeglobals kglobalshortcutsrc krunnerrc kscreenlockerrc kwinrc kwinrulesrc plasma-org.kde.plasma.desktop-appletsrc plasmarc plasmashellrc; do
+for f in darklyrc kcminputrc kded6rc kdeglobals kglobalshortcutsrc krunnerrc kscreenlockerrc kwinrc kwinrulesrc plasma-org.kde.plasma.desktop-appletsrc plasmanotifyrc plasmarc plasmashellrc; do
     if [[ -f "$BACKUP_DIR/config/$f" ]]; then
         cp -a "$BACKUP_DIR/config/$f" "$CONFIG_HOME/$f"
     fi
@@ -39,7 +39,8 @@ done
 rm -rf "$DATA_HOME/kwin/effects/glow"
 rm -rf "$DATA_HOME/plasma/plasmoids/com.nexus.macosdock" \
        "$DATA_HOME/plasma/plasmoids/com.nexus.macosmenubar" \
-       "$DATA_HOME/plasma/plasmoids/com.nexus.macoscontrolcenter"
+       "$DATA_HOME/plasma/plasmoids/com.nexus.macoscontrolcenter" \
+       "$DATA_HOME/plasma/plasmoids/com.nexus.macosnotifications"
 rm -f "$DATA_HOME/applications/nexus-plasma-settings.desktop"
 
 if command -v qdbus-qt6 >/dev/null 2>&1; then

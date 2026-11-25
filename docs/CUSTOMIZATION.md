@@ -33,3 +33,11 @@ Edit `~/.config/kwinrulesrc` to add or remove applications from macOS Vibrancy t
 ```bash
 qdbus-qt6 org.kde.KWin /KWin reconfigure
 ```
+
+## 5. Customizing macOS Sonoma Notifications
+Sonoma Plasma replaces stock KDE popups with `~/.local/share/plasma/plasmoids/com.nexus.macosnotifications/contents/ui/main.qml` and `~/.config/plasmanotifyrc`:
+- Adjust default banner timeout (`5500ms`), width (`356px`), corner radius (`18px`), or Dark/Light frosted-glass opacity directly in `main.qml`.
+- Reload live after editing with:
+```bash
+systemctl --user restart plasma-plasmashell.service
+```

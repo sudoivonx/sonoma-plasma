@@ -1,8 +1,8 @@
 # Sonoma Plasma
 
-> A handcrafted macOS Sonoma desktop transformation for **KDE Plasma 6 (Wayland)** — featuring a custom cosine-wave floating dock, an active-app Finder menu bar, **Burn My Windows — Aura Glow**, selective vibrancy glass, and a native PySide6/QtQuick **macOS Control Center**.
+> A handcrafted macOS Sonoma desktop transformation for **KDE Plasma 6 (Wayland)** — featuring a custom cosine-wave floating dock, an active-app Finder menu bar, frosted-glass **macOS Sonoma notifications**, **Burn My Windows — Aura Glow**, selective vibrancy glass, and a native PySide6/QtQuick **macOS Control Center**.
 
-> **KDE Plasma 6 (Wayland)** için özenle hazırlanmış, bütünsel bir macOS Sonoma masaüstü deneyimi — kosinüs dalgalı büyüyen Dock, aktif uygulamayı gösteren Finder üst menü çubuğu, **Burn My Windows — Aura Glow** açılış/kapanış efekti, seçici buzlu cam (Vibrancy) ve yerel **macOS Kontrol Merkezi**.
+> **KDE Plasma 6 (Wayland)** için özenle hazırlanmış, bütünsel bir macOS Sonoma masaüstü deneyimi — kosinüs dalgalı büyüyen Dock, aktif uygulamayı gösteren Finder üst menü çubuğu, buzlu cam **macOS Sonoma bildirimleri**, **Burn My Windows — Aura Glow** açılış/kapanış efekti, seçici buzlu cam (Vibrancy) ve yerel **macOS Kontrol Merkezi**.
 
 `KDE Plasma 6.8+` · `Wayland` · `KWin 6` · `WhiteSur` · `Darkly` · `Burn My Windows Aura Glow` · `PySide6 / QtQuick`
 
@@ -19,10 +19,10 @@
 | ![Mission Control Overview](assets/screenshots/mission-control.png) | ![Konsole Vibrancy Glass](assets/screenshots/terminal-vibrancy.png) |
 | Organized window grid with horizontal Spaces (`Meta + Up` / `Meta + Tab`).<br>*Yatay masaüstleri (Spaces) ve düzenli pencere ızgarası (`Meta + Up` / `Meta + Tab`).* | Live Global Menu (`Konsole`) paired with `Darkly` + KWin Vibrancy blur.<br>*Canlı Global Menü (`Konsole`) ile `Darkly` + KWin Vibrancy buzlu cam uyumu.* |
 
-| macOS Control Center (`Meta + I`) | Clean Desktop & Top Bar |
+| macOS Control Center (`Meta + I`) | macOS Sonoma Notifications |
 | :--- | :--- |
-| ![macOS Control Center](assets/screenshots/control-center.png) | ![Clean Sonoma Desktop](assets/screenshots/clean-desktop.png) |
-| 8 live categories, 34 settings, Dark/Light 5-layer sync, profiles & SHA-256 undo.<br>*8 canlı kategori, 34 ayar, 5 katmanlı Koyu/Açık geçiş, profiller ve SHA-256 geri alma.* | Slim `26px` translucent menu bar with Apple menu, Finder bar & 2-pill Control Center icon.<br>*İnce `26px` buzlu cam üst bar, Apple menüsü, Finder çubuğu ve iki anahtarlı Kontrol Merkezi simgesi.* |
+| ![macOS Control Center](assets/screenshots/control-center.png) | ![macOS Sonoma Notifications](assets/screenshots/notifications.png) |
+| 8 live categories, 34 settings, Dark/Light 5-layer sync, profiles & SHA-256 undo.<br>*8 canlı kategori, 34 ayar, 5 katmanlı Koyu/Açık geçiş, profiller ve SHA-256 geri alma.* | Frosted-glass top-right banners (`com.nexus.macosnotifications`) with hover close pill & Notification Center.<br>*Sağ üstte buzlu cam macOS bildirim kartları (`com.nexus.macosnotifications`), kapatma kapsülü ve Bildirim Merkezi.* |
 
 ### Cosine-Wave Dock Magnification (`44px → 64px`) / Kosinüs Dalgalı Dock Büyümesi
 
@@ -80,13 +80,14 @@ A dedicated PySide6 / QtQuick application (`~/.local/share/kde-macos/control-cen
 | **Blur & Glass** | KWin Blur toggle, Blur strength (`1–15`), Glass noise (`0–10`), Translucency, Darkly `TransparentDolphinView`, Menu opacity (`50–100%`), Corner radius (`0–24px`) |
 | **Animations & Spaces** | Global duration factor, **Burn My Windows Glow** toggle & duration (`150–2000ms`), **Magic Lamp** toggle & duration, Spaces slide, live Virtual Desktops (`1–8`), and quick animation presets (`macOS Akıcı`, `Seri`, `Azaltılmış Hareket`) |
 | **Wallpaper & Lockscreen** | Desktop wallpaper (`plasma-apply-wallpaperimage`), Lockscreen wallpaper & live `ScreenSaver.configure`, Auto-lock toggle (off by default) |
-| **Cursor & ShakeCursor** | Permanent `shakecursor` guard, Cursor theme & size (`16–48px`) synced across KDE, GTK, and `gsettings` |
+| **Cursor** | Cursor theme (`WhiteSur-cursors`) & size (`16–48px`) synced across KDE, GTK, and `gsettings` |
 | **Typography** | System UI font (`Inter`), Monospace terminal font (`JetBrainsMono Nerd Font`), Window titlebar font (`Inter Bold`) with live `KGlobalSettings` + KWin reload |
 | **Profiles & Recovery** | Save/load/delete named profiles, SHA-256 conflict-checked **Undo** (with live desktop reload), category reset, and full baseline reset |
 
-### 6. Permanent Growing-Cursor Fix & Always-Awake Lockscreen
-- **Growing Cursor Root Cause & Fix:** KDE Plasma 6 enables the `shakecursor` ("Shake Cursor to Find") KWin effect by default, causing the cursor to enlarge while moving quickly. Sonoma Plasma disables `shakecursorEnabled=false`, unloads it from live KWin, and pins `WhiteSur-cursors` at `24px` across KDE, GTK 2/3/4, and `gsettings`.
-- **Manual Lock Ergonomics:** `kscreenlockerrc` sets `Autolock=false`, `LockOnResume=false`, and `Timeout=0` while applying the bundled `2504×1408` wallpaper (`wallpapers/default.jpg`) to both desktop and lockscreen.
+### 6. Native macOS Sonoma Notifications (`com.nexus.macosnotifications`)
+- **Frosted-Glass Wayland Banners:** Replaces stock rectangular Plasma popups with custom `LayerShell` top-right banners (`18px` corner radius, subtle top specular highlight, left-aligned `40×40` rounded app icon, bold title + relative timestamp, action pills, hover-revealed top-left `×` close button, and smooth slide-in animation).
+- **Theme-Adaptive & Notification Center:** Automatically adapts between Dark and Light frosted glass when toggling WhiteSur Dark/Light mode, pauses auto-dismiss on hover, and adds a subtle top-bar bell indicator that opens a scrollable **Notification Center** drawer to review or clear history.
+- **Always-Ready Lockscreen:** `kscreenlockerrc` keeps manual locking ergonomics (`Autolock=false`, `LockOnResume=false`, `Timeout=0`) with the bundled `2504×1408` wallpaper (`wallpapers/default.jpg`) synced to both desktop and lockscreen.
 
 ---
 
@@ -160,12 +161,13 @@ sonoma-plasma/
 │   ├── mission-control.png
 │   ├── terminal-vibrancy.png
 │   ├── control-center.png
+│   ├── notifications.png
 │   ├── clean-desktop.png
 │   └── dock-wave.png
 ├── config/                            # Sanitized KDE Plasma 6 & GTK 2/3/4 configs (__HOME__ templates)
 └── local/                             # Deployed into ~/.local/share/
     ├── kwin/effects/glow/             # Burn My Windows Aura Glow KWin 6 effect (GLES 3.20 / HDR)
-    ├── plasma/plasmoids/              # com.nexus.macosdock, com.nexus.macosmenubar, com.nexus.macoscontrolcenter
+    ├── plasma/plasmoids/              # macosdock, macosmenubar, macoscontrolcenter, macosnotifications
     ├── control-center/                # PySide6/QtQuick macOS Control Center + unittest suite
     ├── applications/                  # Desktop launcher entry
     └── sddm/                          # Optional WhiteSur SDDM theme + apply/rollback scripts
@@ -223,13 +225,14 @@ PySide6 / QtQuick ile geliştirilen bu yerel uygulama (`~/.local/share/kde-macos
 | **Bulanıklık & Cam** | KWin Blur aç/kapa, bulanıklık şiddeti (`1–15`), cam kumlanma (`0–10`), saydamlık, Darkly `TransparentDolphinView`, menü opaklığı (`%50–100`), köşe yuvarlaklığı (`0–24px`) |
 | **Animasyonlar & Spaces** | Genel hız çarpanı, **Burn My Windows Glow** aç/kapa & süresi (`150–2000ms`), **Magic Lamp** aç/kapa & süresi, masaüstü kaydırma, canlı sanal masaüstü sayısı (`1–8`) ve hızlı profiller (`macOS Akıcı`, `Seri`, `Azaltılmış Hareket`) |
 | **Duvar Kağıdı & Kilit** | Masaüstü duvar kağıdı, kilit ekranı duvar kağıdı (`ScreenSaver.configure` ile canlı yenileme) ve otomatik kilit anahtarı |
-| **İmleç & ShakeCursor** | İmleç büyümesini önleyen `shakecursor` koruması, imleç teması ve boyutu (`16–48px`) — KDE, GTK ve `gsettings` ile tam senkron |
+| **İmleç** | İmleç teması (`WhiteSur-cursors`) ve boyutu (`16–48px`) — KDE, GTK ve `gsettings` ile tam senkron |
 | **Yazı Tipleri** | Arayüz (`Inter`), terminal (`JetBrainsMono Nerd Font`) ve başlık çubuğu (`Inter Bold`) yazı tipleri — canlı `KGlobalSettings` ve KWin yenilemeli |
 | **Profiller & Kurtarma** | Adlandırılmış profil kaydetme/yükleme/silme, SHA-256 çakışma kontrollü canlı **Geri Al (Undo)**, kategori bazlı ve tam başlangıç sıfırlaması |
 
-### 6. Büyüyen Fare İmleci Hatası (Kök Neden ve Kalıcı Çözüm)
-- **Sorun:** KDE Plasma 6'da varsayılan olarak etkin gelen `shakecursor` ("Bulmak için İmleci Salla") KWin efekti, fare hızlı hareket ettirildiğinde imlecin büyümesine neden olur.
-- **Kalıcı Çözüm:** `kwinrc` içinde `shakecursorEnabled=false` yapılır, canlı KWin oturumundan kaldırılır ve `WhiteSur-cursors` `24px` olarak KDE, GTK 2/3/4 ve `gsettings` katmanlarında sabitlenir.
+### 6. Yerel macOS Sonoma Bildirimleri ve Bildirim Merkezi (`com.nexus.macosnotifications`)
+- **Buzlu Cam Wayland Bildirim Kartları:** Varsayılan köşeli KDE bildirim pencereleri yerine, sağ üstte üst menü çubuğunun hemen altında beliren macOS Sonoma tarzı yuvarlatılmış (`18px`) buzlu cam kartlar kullanılır; solda `40×40` yuvarlatılmış uygulama simgesi, başlık + göreceli zaman, eylem düğmeleri, üzerine gelince sol üstte beliren `×` kapatma kapsülü ve yumuşak kayarak açılış animasyonu sunar.
+- **Tema Uyumlu & Bildirim Merkezi:** Koyu/Açık tema geçişinde otomatik olarak koyu veya açık buzlu cam rengine uyum sağlar, fare üzerindeyken otomatik kapanmayı duraklatır ve üst bardaki sade zil göstergesine tıklandığında geçmiş bildirimleri görüntüleyip temizleyebileceğiniz **Bildirim Merkezi** çekmecesini açar.
+- **Kilit Ekranı & Duvar Kağıdı:** `kscreenlockerrc` elle kilitleme düzeniyle (`Autolock=false`, `LockOnResume=false`, `Timeout=0`) gelir ve `2504×1408` varsayılan duvar kağıdını masaüstü ve kilit ekranında eşitler.
 
 ---
 
